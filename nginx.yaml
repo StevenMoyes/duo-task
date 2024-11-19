@@ -1,7 +1,7 @@
 apiVersion: v1
-kind: ConfigMap
+kind: #
 metadata:
-  name: nginx-config
+  name: #
 data:
   nginx.conf: |
     events {}
@@ -9,22 +9,22 @@ data:
       server {
         listen #;
         location / {
-          proxy_pass http://flask-service:5500;
+          proxy_pass http://#:#;
         }
       }
     }
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: #
 metadata:
-  name: flask-deployment
+  name: #
   labels:
-    app: flask
+    app: #
 spec:
   replicas: 10
   selector:
     matchLabels:
-      app: flask
+      app: #
   strategy:
     rollingUpdate:
       maxSurge: 10%
@@ -32,30 +32,30 @@ spec:
   template:
     metadata:
       labels:
-        app: flask
+        app: #
     spec:
       volumes:
-      - name: flask-volume
+      - name: #
         configMap:
-          name: nginx-config
+          name: #
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: #
+        image: #
         imagePullPolicy: Always
         ports: 
         - containerPort: 80
         volumeMounts:
-        - name: nginx-volume
+        - name: #
           mountPath: /etc/nginx/
 ---
 apiVersion: v1
-kind: Service
+kind: #
 metadata:
-  name: nginx-service
+  name: #
 spec:
-  type: LoadBalancer
+  type: #
   selector:
-    app: nginx
+    app: #
   ports:
   - protocol: TCP
     port: 80
