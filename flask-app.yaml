@@ -1,33 +1,33 @@
 apiVersion: apps/v1
-kind: #
+kind: Deployment
 metadata:
-  name: #
+  name: flask-deployment
   labels: 
-    app: #
+    app: flask
 spec:
   replicas: 10
   selector:
     matchLabels:
-      app: #
+      app: flask
   template:
     metadata:
       labels:
-        app: #
+        app: flask
     spec:
       containers:
-      - name: #
-        image: #
+      - name: flask-app
+        image: stevenmoyes/duo
         ports: 
         - containerPort: 5500
 ---
 apiVersion: v1
-kind: #
+kind: Service
 metadata:
-  name: #
+  name: flask-service
 spec:
-  type: #
+  type: ClusterIP
   selector:
-    app: #
+    app: flask
   ports:
   - protocol: TCP
     port: 5500  
