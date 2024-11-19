@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: stevenmoyes/duo
+          image: stevenmoyes/duo:latest
           ports: 
             - containerPort: 5500
 ---
