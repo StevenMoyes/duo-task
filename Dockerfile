@@ -7,7 +7,7 @@ COPY . /app
 RUN pip install -r requirements.txt
 COPY . .
 # Set YOUR_NAME environment variable
-ENV YOUR_NAME="Steven - not the dog"
+ENV YOUR_NAME="Most latest deployment"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
