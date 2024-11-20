@@ -9,15 +9,15 @@ spec:
   selector:
     matchLabels:
       app: flask
+  strategy:
+    rollingUpdate:
+      maxSurge: 20%
+      maxUnavailable: 20%
   template:
     metadata:
       labels:
         app: flask
     spec:
-      strategy:
-        rollingUpdate:
-          maxSurge: 20%
-          maxUnavailable: 20%
       containers:
         - name: flask-app
           image: stevenmoyes/duo-jenk:latest
