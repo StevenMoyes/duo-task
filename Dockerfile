@@ -3,7 +3,7 @@ FROM python:3.6
 # Copy contents into image
 WORKDIR /app
 # Install pip dependencies from requirements
-COPY . .
+COPY . /app
 RUN pip install -r requirements.txt
 COPY . .
 # Set YOUR_NAME environment variable
