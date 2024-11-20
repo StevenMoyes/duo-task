@@ -20,7 +20,7 @@ spec:
           maxUnavailable: 20%
       containers:
         - name: flask-app
-          image: stevenmoyes/duo:latest
+          image: stevenmoyes/duo-jenk:latest
           imagePullPolicy: Always
           ports: 
             - containerPort: 5500
