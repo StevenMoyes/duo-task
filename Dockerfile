@@ -7,7 +7,7 @@ COPY . /app
 RUN pip install -r requirements.txt
 COPY . .
 # Set YOUR_NAME environment variable
-ENV YOUR_NAME="20241121 - 0935"
+ENV YOUR_NAME="Deb 20241121 - 1040"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
